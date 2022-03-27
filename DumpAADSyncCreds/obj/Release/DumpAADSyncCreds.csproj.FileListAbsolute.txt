@@ -1,8 +1,0 @@
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\bin\Release\DumpAADSyncCreds.exe.config
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\bin\Release\DumpAADSyncCreds.exe
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\bin\Release\DumpAADSyncCreds.pdb
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\obj\Release\DumpAADSyncCreds.csproj.CoreCompileInputs.cache
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\obj\Release\DumpAADSyncCreds.exe
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\obj\Release\DumpAADSyncCreds.pdb
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\bin\Release\mcrypt.dll
-E:\AzureAD\DumpAADSyncCreds\DumpAADSyncCreds\DumpAADSyncCreds\obj\Release\DumpAADSyncCreds.csproj.CopyComplete
