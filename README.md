@@ -93,7 +93,7 @@ ps> Set-AADIntUserPassword -SourceAnchor "<Immutable ID>" -Password "P@ss4Hagrid
 ```
 
 #### Lateral move across AD Forest
-During different red team engagement, I noted that it is common to have [multiple forests with single Azure AD tenant](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/plan-connect-topologies#multiple-forests-single-azure-ad-tenant) topologies for Azure AD Connect. WIth this setup, we could leverage AD DS connector account to compromise trusted forests from another.
+During different red team engagements, I noted that it is common to have [multiple forests with single Azure AD tenant](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/plan-connect-topologies#multiple-forests-single-azure-ad-tenant) topology for Azure AD Connect. WIth this setup, we could leverage AD DS connector account to compromise trusted forests from another.
 1. Locate and compromise AAD connector servers and corresponding connector accounts that synchronizes users from other forests
 2. Execute DCSync attack with the connector account against the target forest
 
