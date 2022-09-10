@@ -73,6 +73,9 @@ ADSync version:                 1.6.16.0
 *** ADSync passwords can be read or modified as local administrator only for ADSync version 1.3.xx.xx
 ```
 
+## Compilation
+Add References > Browse > [mcrypt.dll](DumpAADSyncCreds/Lib/mcrypt.dll)
+
 ## Use Cases of AAD Connect credentials
 #### Lateral move from on-perm to cloud (Reset password of cloud user)
 1. Import AADInternal
