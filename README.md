@@ -100,6 +100,9 @@ During different red team engagements, I noted that it is common to have [multip
 1. Locate and compromise AAD connector servers and corresponding connector accounts that synchronizes users from other forests
 2. Execute DCSync attack with the connector account against the target forest
 
+#### Compromise Azure Application
+If we managed to find a abusable Azure application, we could add credential to the app and potentially escalate our privilege. Refer to [AbuseAzureAPIPermissions](https://github.com/Hagrid29/AbuseAzureAPIPermissions) for more details.
+
 ## Improvement
 
 - Dirk-jan found a way to remote dump AAD connect account credentials with RPC call. Check details in his [blog post](https://dirkjanm.io/updating-adconnectdump-a-journey-into-dpapi/)
